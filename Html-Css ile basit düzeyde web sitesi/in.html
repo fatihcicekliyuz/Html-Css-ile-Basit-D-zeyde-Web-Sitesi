@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tur Rezervasyon </title>
+    <link rel="stylesheet" href="fatih.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h3>Üye Ol</h3>
+    <form action="in.php" method="post">
+        <div class="form-control">
+            <input type="text" name="adsoyad" required>
+            <label for="#">Ad/Soyad</label>
+        </div>
+        <div class="form-control">
+            <input type="text" name="tel" required>
+            <label for="#">Tel</label>
+
+        </div>
+        <div class="form-control">
+            <input type="email" name="email" required>
+            <label for="#">Email</label>
+
+        </div>
+        <div class="form-control">
+            <input type="text" name="sifre" required>
+            <label for="#">Şifre</label>
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Kaydol"/>
+
+        </div>
+    </form>
+</div>
+
+<div class="con">
+    <form>
+        <h3>Giriş Yap</h3>
+
+        <div class="form-cont">
+            <input type="email" name="email" required>
+            <label for="#">Email</label>
+
+        </div>
+
+        <div class="form-cont">
+            <input type="text" name="sifre" required>
+            <label for="#">Şifre</label>
+        </div>
+
+        <div class="form-cont">
+            <input type="submit" value="Giriş Yap"/>
+
+        </div>
+
+
+    </form>
+</div>
+
+<div class="config">
+
+    <div class="form-con">
+        <input type="submit" value="Tur1 Kayıt"/>
+
+    </div>
+
+
+</div>
+
+<div class="confi">
+
+    <div class="form-co">
+        <input type="submit" value="Tur2 Kayıt"/>
+
+    </div>
+
+
+</div>
+
+<div class="config">
+
+    <div class="form-con">
+        <input type="submit" value="Tur3 Kayıt"/>
+
+    </div>
+
+
+</div>
+
+<div class="config">
+
+    <div class="form-con">
+        <input type="submit" value="Tur4 Kayıt"/>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="poz">
+<div class="rsm1">
+    <h1 >Ürgüp</h1>
+    <d1>Malatya Çıkışlı Kapadokya/Ürgüp Turumuz </d1><br>
+    <t1>Fiyat:150tl</t1><br>
+    <a1>Tarih:21 Aralık</a1><br>
+
+
+    <img src="img/ürgüp.jpg"width="600" height="450"/><br>
+
+</div>
+
+<div class="rsm2">
+    <h1>Göreme</h1>
+    <d1>Malatya Çıkışlı Kapadokya/Göreme Turumuz </d1><br>
+    <t1>Fiyat:150tl</t1><br>
+    <a1>Tarih:20 Aralık</a1><br>
+
+    <img src="img/göreme.jpg"width="600" height="450"/><br>
+
+</div>
+
+<div class="rsm3">
+    <h1>Ortahisar</h1>
+    <d1>Malatya Çıkışlı Kapadokya/Ortahisar Turumuz </d1><br>
+    <t1>Fiyat:150tl</t1><br>
+    <a1>Tarih:21 Aralık</a1><br>
+    <img src="img/ortahisar.jpg"width="600" height="450"/><br>
+
+</div>
+
+<div class="rsm4">
+    <h1>Üçhisar</h1>
+    <d1>Malatya Çıkışlı Kapadokya/Üçhisar Turumuz </d1><br>
+    <t1>Fiyat:150tl</t1><br>
+    <a1>Tarih:21 Aralık</a1><br>
+    <img src="img/uchisar.jpg"width="600" height="450"/><br>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
+
+
+<?php
+include("baglan.php");
+
+if(isset($_POST["adsoyad"],$_POST["tel"],$_POST["email"],$_POST["sifre"]))
+{
+ $ad=$_POST["adsoyad"];
+ $mobil=$_POST["tel"];
+ $mail=$_POST["email"];
+ $sfre=$_POST["sifre"];
+
+ $ekle= "INSERT INTO kay( adsoyad, tel, email,sifre) VALUES ('".$ad."','".$mobil."','".$mail."','".$sfre."')";
+
+
+if($baglanti->query($ekle)===TRUE)
+{
+echo "<script>('Kaydınız Yapıldı')</script>";
+}
+}
+
+
+
+
+?>
